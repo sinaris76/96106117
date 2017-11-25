@@ -21,6 +21,8 @@ struct ghost {
     int y_now;
 };
 
+void pacman_place_finder (int n, int m, char page[n][m], struct pacman *pacman);
+
 int main () {
     int n, m, counter1, counter2, minute, second, points, cheese_counter = 0, pineapple_counter = 0;
     struct pacman pacman;
@@ -65,5 +67,34 @@ int main () {
         scanf("%d ", &inky.defensive_time);
     scanf("(%d,%d) (%d,%d)", &inky.x_start, &inky.y_start, &inky.x_now, &inky.y_now);
 
+    pacman_place_finder(n, m, page, &pacman);
+
     return 0;
+}
+
+void pacman_place_finder (int n, int m, char page[n][m], struct pacman *pacman) {
+
+    int temp_x = pacman->x_now;
+    int temp_y = pacman->y_now;
+
+    switch (pacman->direction) {
+        case 1: pacman->x_now -= 1; break;
+        case 2: pacman->y_now += 1; break;
+        case 3: pacman->x_now += 1; break;
+        case 4: pacman->y_now -= 1; break;
+    }
+
+    if (pacman->y_now == m)
+        pacman->y_now = 0;
+    if (pacman->y_now == -1)
+        pacman->y_now = m - 1;
+    if (pacman->x_now == n)
+        pacman->x_now = 0;
+    if (pacman->x_now == -1)
+        pacman->x_now = n-1;
+
+    if(page[pacman->x_now][pacman->y_now] == '#') {
+        pacman->x_now = temp_x;
+        pacman->y_now = temp_y;
+    }
 }
