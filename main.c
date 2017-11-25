@@ -22,6 +22,7 @@ struct ghost {
 };
 
 void pacman_place_finder (int n, int m, char page[n][m], struct pacman *pacman);
+void trace_points(int n, int m, char page[n][m], int pacman_x_now, int pacman_y_now, int *points, int *pineapple_counter, int *cheese_counter);
 
 int main () {
     int n, m, counter1, counter2, minute, second, points, cheese_counter = 0, pineapple_counter = 0;
@@ -68,6 +69,10 @@ int main () {
     scanf("(%d,%d) (%d,%d)", &inky.x_start, &inky.y_start, &inky.x_now, &inky.y_now);
 
     pacman_place_finder(n, m, page, &pacman);
+    trace_points(n, m, page, pacman.x_now, pacman.y_now, &points, &pineapple_counter, &cheese_counter);
+
+    if (page[pacman.x_now][pacman.y_now] == 'O')
+        blinky.mode = pinky.mode = clyde.mode = inky.mode = 0;
 
     return 0;
 }
@@ -96,5 +101,17 @@ void pacman_place_finder (int n, int m, char page[n][m], struct pacman *pacman) 
     if(page[pacman->x_now][pacman->y_now] == '#') {
         pacman->x_now = temp_x;
         pacman->y_now = temp_y;
+    }
+}
+
+void trace_points(int n, int m, char page[n][m], int pacman_x_now, int pacman_y_now, int *points, int *pineapple_counter, int *cheese_counter) {
+    if (page[pacman_x_now][pacman_y_now] == '*') {
+        *points += 1;
+        *cheese_counter -= 1;
+    }
+    if (page[pacman_x_now][pacman_y_now] == '^')
+        *points += 20;
+    if (page[pacman_x_now][pacman_y_now] == 'O') {
+        *pineapple_counter -= 1;
     }
 }
