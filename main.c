@@ -23,6 +23,7 @@ struct ghost {
 
 void pacman_place_finder (int n, int m, char page[n][m], struct pacman *pacman);
 void trace_points(int n, int m, char page[n][m], int pacman_x_now, int pacman_y_now, int *points, int *pineapple_counter, int *cheese_counter);
+void check_ghosts(struct pacman *pacman, struct ghost *blinky, struct ghost *pinky, struct ghost *clyde, struct ghost *inky, int *points);
 
 int main () {
     int n, m, counter1, counter2, minute, second, points, cheese_counter = 0, pineapple_counter = 0;
@@ -74,6 +75,14 @@ int main () {
     if (page[pacman.x_now][pacman.y_now] == 'O')
         blinky.mode = pinky.mode = clyde.mode = inky.mode = 0;
 
+    check_ghosts(&pacman, &blinky, &pinky, &clyde, &inky, &points);
+
+    printf("(%d,%d)\n%d\n", pacman.x_now, pacman.y_now, points);
+    if (cheese_counter == 0 && pineapple_counter == 0 && pacman.lives != 0)
+        printf("Yes");
+    else
+        printf("No");
+
     return 0;
 }
 
@@ -115,3 +124,62 @@ void trace_points(int n, int m, char page[n][m], int pacman_x_now, int pacman_y_
         *pineapple_counter -= 1;
     }
 }
+
+void check_ghosts(struct pacman *pacman, struct ghost *blinky, struct ghost *pinky, struct ghost *clyde, struct ghost *inky, int *points) {
+
+
+    if (pacman->x_now == blinky->x_now && pacman->y_now == blinky->y_now && blinky->mode == 0) {
+        blinky->x_now = blinky->x_start;
+        blinky->y_now = blinky->y_start;
+        *points += 50;
+    }
+
+    if (pacman->x_now == pinky->x_now && pacman->y_now == pinky->y_now && pinky->mode == 0) {
+        pinky->x_now = pinky->x_start;
+        pinky->y_now = pinky->y_start;
+        *points += 50;
+    }
+
+
+    if (pacman->x_now == clyde->x_now && pacman->y_now == clyde->y_now && clyde->mode == 0) {
+        clyde->x_now = clyde->x_start;
+        clyde->y_now = clyde->y_start;
+        *points += 50;
+    }
+
+    if (pacman->x_now == inky->x_now && pacman->y_now == inky->y_now && inky->mode == 0) {
+        inky->x_now = inky->x_start;
+        inky->y_now = inky->y_start;
+        *points += 50;
+    }
+
+    if (pacman->x_now == blinky->x_now && pacman->y_now == blinky->y_now && blinky->mode == 1) {
+        pacman->x_now = pacman->x_start;
+        pacman->y_now = pacman->y_start;
+        pacman->lives -= 1;
+    }
+
+
+    if (pacman->x_now == pinky->x_now && pacman->y_now == pinky->y_now && pinky->mode == 1) {
+        pacman->x_now = pacman->x_start;
+        pacman->y_now = pacman->y_start;
+        pacman->lives -= 1;
+    }
+
+
+    if (pacman->x_now == clyde->x_now && pacman->y_now == clyde->y_now && clyde->mode == 1) {
+        pacman->x_now = pacman->x_start;
+        pacman->y_now = pacman->y_start;
+        pacman->lives -= 1;
+    }
+
+
+    if (pacman->x_now == inky->x_now && pacman->y_now == inky->y_now && inky->mode == 1) {
+        pacman->x_now = pacman->x_start;
+        pacman->y_now = pacman->y_start;
+        pacman->lives -= 1;
+    }
+
+}
+
+
