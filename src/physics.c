@@ -244,6 +244,20 @@ Direction decideGhost(const Map* map, Ghost* ghost, Pacman *pacman, Ghost *blink
     }
 
     if (ghost->type == CLYDE) {
+        if (ghost->blue == true)
+            return BFS(map, (int)ghost->x, (int) ghost->y, ghost->startX, ghost->startY);
+        if (fabs(pacman->y - ghost->y) + fabs(pacman->x - ghost->x) > 8)
+            return BFS(map, (int) ghost->x, (int) ghost->y,(int) pacman->x, (int) pacman->y);
+        else {
+            if (map->cells[0][map->height - 1] != CELL_BLOCK)
+                return BFS(map, (int) (ghost->x), (int) ghost->y, 0,  map->height - 1);
+            if (map->cells[0][map->height - 2] != CELL_BLOCK)
+                return BFS(map, (int) (ghost->x), (int) ghost->y, 0, map->height - 2);
+            if (map->cells[1][map->height - 1] != CELL_BLOCK)
+                return BFS(map, (int) (ghost->x), (int) ghost->y, 1, map->height - 1);
+            if (map->cells[1][map->height - 2] != CELL_BLOCK)
+                return BFS(map, (int) (ghost->x), (int) ghost->y, 1, map->height - 2);
+        }
         return DIR_NONE;
     }
 
