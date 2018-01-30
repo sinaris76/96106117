@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu99
 
 C_DEFINES = 
 
-C_INCLUDES = -I/cygdrive/c/Users/Arshia/CLionProjects/project/src 
+C_INCLUDES = -I/cygdrive/c/project/src 
 

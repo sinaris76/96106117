@@ -43,10 +43,10 @@ RM = /cygdrive/c/Users/Arshia/.CLion2017.2/system/cygwin_cmake/bin/cmake.exe -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cygdrive/c/Users/Arshia/CLionProjects/project
+CMAKE_SOURCE_DIR = /cygdrive/c/project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cygdrive/c/Users/Arshia/CLionProjects/project/cmake-build-debug
+CMAKE_BINARY_DIR = /cygdrive/c/project/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/project.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/project.dir/flags.make
 
 CMakeFiles/project.dir/src/game.c.o: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/src/game.c.o: ../src/game.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Arshia/CLionProjects/project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/project.dir/src/game.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/project.dir/src/game.c.o   -c /cygdrive/c/Users/Arshia/CLionProjects/project/src/game.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/project.dir/src/game.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/project.dir/src/game.c.o   -c /cygdrive/c/project/src/game.c
 
 CMakeFiles/project.dir/src/game.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/project.dir/src/game.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cygdrive/c/Users/Arshia/CLionProjects/project/src/game.c > CMakeFiles/project.dir/src/game.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cygdrive/c/project/src/game.c > CMakeFiles/project.dir/src/game.c.i
 
 CMakeFiles/project.dir/src/game.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/project.dir/src/game.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cygdrive/c/Users/Arshia/CLionProjects/project/src/game.c -o CMakeFiles/project.dir/src/game.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cygdrive/c/project/src/game.c -o CMakeFiles/project.dir/src/game.c.s
 
 CMakeFiles/project.dir/src/game.c.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/project.dir/src/game.c.o.provides.build: CMakeFiles/project.dir/src/g
 
 CMakeFiles/project.dir/src/physics.c.o: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/src/physics.c.o: ../src/physics.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Arshia/CLionProjects/project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/project.dir/src/physics.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/project.dir/src/physics.c.o   -c /cygdrive/c/Users/Arshia/CLionProjects/project/src/physics.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/project.dir/src/physics.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/project.dir/src/physics.c.o   -c /cygdrive/c/project/src/physics.c
 
 CMakeFiles/project.dir/src/physics.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/project.dir/src/physics.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cygdrive/c/Users/Arshia/CLionProjects/project/src/physics.c > CMakeFiles/project.dir/src/physics.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cygdrive/c/project/src/physics.c > CMakeFiles/project.dir/src/physics.c.i
 
 CMakeFiles/project.dir/src/physics.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/project.dir/src/physics.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cygdrive/c/Users/Arshia/CLionProjects/project/src/physics.c -o CMakeFiles/project.dir/src/physics.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cygdrive/c/project/src/physics.c -o CMakeFiles/project.dir/src/physics.c.s
 
 CMakeFiles/project.dir/src/physics.c.o.requires:
 
@@ -121,7 +121,7 @@ project.exe: ../sdl/sdl2-lib/libSDL2.a
 project.exe: ../sdl/sdl2-lib/libSDL2main.a
 project.exe: ../sdl/sdl2-gfx-lib/libsdl-gfx.a
 project.exe: CMakeFiles/project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/c/Users/Arshia/CLionProjects/project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable project.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/c/project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable project.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/project.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -139,6 +139,6 @@ CMakeFiles/project.dir/clean:
 .PHONY : CMakeFiles/project.dir/clean
 
 CMakeFiles/project.dir/depend:
-	cd /cygdrive/c/Users/Arshia/CLionProjects/project/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cygdrive/c/Users/Arshia/CLionProjects/project /cygdrive/c/Users/Arshia/CLionProjects/project /cygdrive/c/Users/Arshia/CLionProjects/project/cmake-build-debug /cygdrive/c/Users/Arshia/CLionProjects/project/cmake-build-debug /cygdrive/c/Users/Arshia/CLionProjects/project/cmake-build-debug/CMakeFiles/project.dir/DependInfo.cmake --color=$(COLOR)
+	cd /cygdrive/c/project/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cygdrive/c/project /cygdrive/c/project /cygdrive/c/project/cmake-build-debug /cygdrive/c/project/cmake-build-debug /cygdrive/c/project/cmake-build-debug/CMakeFiles/project.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/project.dir/depend
 

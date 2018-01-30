@@ -1,4 +1,4 @@
-C:\Users\Arshia\.CLion2017.2\system\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /cygdrive/c/Users/Arshia/CLionProjects/project
+C:\Users\Arshia\.CLion2017.2\system\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /cygdrive/c/project
 -- Configuring done
 -- Generating done
--- Build files have been written to: /cygdrive/c/Users/Arshia/CLionProjects/project/cmake-build-debug
+-- Build files have been written to: /cygdrive/c/project/cmake-build-debug

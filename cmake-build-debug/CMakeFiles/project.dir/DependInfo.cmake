@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/cygdrive/c/Users/Arshia/CLionProjects/project/src/game.c" "/cygdrive/c/Users/Arshia/CLionProjects/project/cmake-build-debug/CMakeFiles/project.dir/src/game.c.o"
-  "/cygdrive/c/Users/Arshia/CLionProjects/project/src/physics.c" "/cygdrive/c/Users/Arshia/CLionProjects/project/cmake-build-debug/CMakeFiles/project.dir/src/physics.c.o"
+  "/cygdrive/c/project/src/game.c" "/cygdrive/c/project/cmake-build-debug/CMakeFiles/project.dir/src/game.c.o"
+  "/cygdrive/c/project/src/physics.c" "/cygdrive/c/project/cmake-build-debug/CMakeFiles/project.dir/src/physics.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

@@ -11,5 +11,7 @@
 Direction decidePacman(const Map* map, Pacman* pacman, Action action);
 
 // TO WRITE
-Direction decideGhost(const Map* map, Ghost* ghost);
+Direction BFS(const Map *map, int origin_x, int origin_y, int dest_x, int dest_y);
+
+Direction decideGhost(const Map* map, Ghost* ghost, Pacman *pacman, Ghost *blinky);
 #endif

@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/Users/Arshia/CLionProjects/project/src/game.c
+/cygdrive/c/project/src/game.c
 game.h
-/cygdrive/c/Users/Arshia/CLionProjects/project/src/game.h
+/cygdrive/c/project/src/game.h
 physics.h
-/cygdrive/c/Users/Arshia/CLionProjects/project/src/physics.h
+/cygdrive/c/project/src/physics.h
 map.h
-/cygdrive/c/Users/Arshia/CLionProjects/project/src/map.h
+/cygdrive/c/project/src/map.h
 math.h
 -
 stdio.h
@@ -22,33 +22,35 @@ time.h
 stdlib.h
 -
 
-/cygdrive/c/Users/Arshia/CLionProjects/project/src/game.h
+/cygdrive/c/project/src/game.h
 stdbool.h
 -
 map.h
-/cygdrive/c/Users/Arshia/CLionProjects/project/src/map.h
+/cygdrive/c/project/src/map.h
 
-/cygdrive/c/Users/Arshia/CLionProjects/project/src/input.h
+/cygdrive/c/project/src/input.h
 
-/cygdrive/c/Users/Arshia/CLionProjects/project/src/map.h
+/cygdrive/c/project/src/map.h
 
-/cygdrive/c/Users/Arshia/CLionProjects/project/src/physics.c
+/cygdrive/c/project/src/physics.c
 physics.h
-/cygdrive/c/Users/Arshia/CLionProjects/project/src/physics.h
+/cygdrive/c/project/src/physics.h
 game.h
-/cygdrive/c/Users/Arshia/CLionProjects/project/src/game.h
+/cygdrive/c/project/src/game.h
 map.h
-/cygdrive/c/Users/Arshia/CLionProjects/project/src/map.h
+/cygdrive/c/project/src/map.h
 time.h
 -
 stdlib.h
 -
 stdio.h
 -
+math.h
+-
 
-/cygdrive/c/Users/Arshia/CLionProjects/project/src/physics.h
+/cygdrive/c/project/src/physics.h
 game.h
-/cygdrive/c/Users/Arshia/CLionProjects/project/src/game.h
+/cygdrive/c/project/src/game.h
 input.h
-/cygdrive/c/Users/Arshia/CLionProjects/project/src/input.h
+/cygdrive/c/project/src/input.h
 
