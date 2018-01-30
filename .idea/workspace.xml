@@ -81,8 +81,8 @@
       <file leaf-file-name="physics.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/physics.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="219" column="93" lean-forward="true" selection-start-line="219" selection-start-column="93" selection-end-line="219" selection-end-column="93" />
+            <state relative-caret-position="470">
+              <caret line="234" column="86" lean-forward="true" selection-start-line="234" selection-start-column="86" selection-end-line="234" selection-end-column="86" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -121,7 +121,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="559" />
     <option name="width" value="3295" />
     <option name="height" value="2074" />
@@ -251,15 +251,15 @@
       <workItem from="1516852994607" duration="18662000" />
       <workItem from="1516966933351" duration="32000" />
       <workItem from="1517198716397" duration="25875000" />
-      <workItem from="1517302574264" duration="1399000" />
+      <workItem from="1517302574264" duration="1530000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99293000" />
+    <option name="totallyTimeSpent" value="99424000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="559" y="0" width="3295" height="2074" extended-state="1" />
+    <frame x="559" y="0" width="3295" height="2074" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.109102055" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -726,8 +726,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/physics.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="219" column="93" lean-forward="true" selection-start-line="219" selection-start-column="93" selection-end-line="219" selection-end-column="93" />
+        <state relative-caret-position="470">
+          <caret line="234" column="86" lean-forward="true" selection-start-line="234" selection-start-column="86" selection-end-line="234" selection-end-column="86" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>

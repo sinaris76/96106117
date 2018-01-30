@@ -222,7 +222,25 @@ Direction decideGhost(const Map* map, Ghost* ghost, Pacman *pacman, Ghost *blink
     }
 
     if (ghost->type == INKY) {
-        return DIR_NONE;
+        if (ghost->blue == true)
+            return BFS(map, (int)ghost->x, (int) ghost->y, ghost->startX, ghost->startY);
+        int destx = ((int) pacman->x + 2 + ((int) pacman->x + 2 - (int) blinky->x)) % map->width;
+        int desty = ((int) pacman->y + 2 + ((int) pacman->y + 2 - (int) blinky->y)) % map->height;
+        if (map->cells[destx][desty] == CELL_BLOCK) {
+            if (map->cells[destx + 1][desty] != CELL_BLOCK && destx + 1 != map->width)
+                return BFS(map, (int) ghost->x, (int) ghost->y, destx + 1, desty);
+            if (map->cells[destx][desty + 1] != CELL_BLOCK && desty + 1 != map->height)
+                return BFS(map, (int) ghost->x, (int) ghost->y, destx, desty + 1);
+            if (map->cells[destx + 1][desty + 1] != CELL_BLOCK && destx + 1 != map->width && desty + 1 != map->height)
+                return BFS(map, (int) ghost->x, (int) ghost->y, destx + 1, desty + 1);
+            if (map->cells[destx - 1][desty] != CELL_BLOCK && destx != 0)
+                return BFS(map, (int) ghost->x, (int) ghost->y, destx - 1, desty);
+            if (map->cells[destx][desty - 1] != CELL_BLOCK && desty != 0)
+                return BFS(map, (int) ghost->x, (int) ghost->y, destx, desty - 1);
+            if (map->cells[destx - 1][desty - 1] != CELL_BLOCK && destx != 0 && desty != 0)
+                return BFS(map, (int) ghost->x, (int) ghost->y, destx - 1, desty - 1);
+        }
+        return BFS(map, (int) ghost->x, (int) ghost->y, destx, desty);
     }
 
     if (ghost->type == CLYDE) {
