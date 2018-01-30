@@ -262,7 +262,72 @@ Direction decideGhost(const Map* map, Ghost* ghost, Pacman *pacman, Ghost *blink
     }
 
     if (ghost->type == PINKY) {
-        return DIR_NONE;
+        if (ghost->blue == true)
+            return BFS(map, (int)ghost->x, (int) ghost->y, ghost->startX, ghost->startY);
+        if (pacman->dir == DIR_UP) {
+            if (map->cells[(int) pacman->x][((int) pacman->y == 0) ? (map->height - 1) : ((int) pacman->y - 1)] == CELL_BLOCK) {
+                return BFS(map, (int) ghost->x, (int) ghost->y, (int) pacman->x, (int) pacman->y);
+            }
+            else if (map->cells[(int) pacman->x][((int) pacman->y - 2 >= 0) ? ((int) pacman->y - 2) : (map->height - (2 - (int) pacman->y))] == CELL_BLOCK) {
+                return BFS(map, (int) ghost->x, (int) ghost->y, (int) pacman->x, ((int) pacman->y - 1 >= 0) ? ((int) pacman->y - 1) : (map->height - 1));
+            }
+            else if (map->cells[(int) pacman->x][((int) pacman->y - 3 >= 0) ? ((int) pacman->y - 3) : (map->height - (2 - (int) pacman->y))] == CELL_BLOCK) {
+                return BFS(map, (int) ghost->x, (int) ghost->y, (int) pacman->x, ((int) pacman->y - 2 >= 0) ? ((int) pacman->y - 2) : (map->height - 2));
+            }
+            else if (map->cells[(int) pacman->x][((int) pacman->y - 4 >= 0) ? ((int) pacman->y - 4) : (map->height - (3 - (int) pacman->y))] == CELL_BLOCK) {
+                return BFS(map, (int) ghost->x, (int) ghost->y, (int) pacman->x, ((int) pacman->y - 3 >= 0) ? ((int) pacman->y - 3) : (map->height - 3));
+            }
+            else
+                return BFS(map, (int) ghost->x, (int) ghost->y, (int) pacman->x, ((int) pacman->y - 4 >= 0) ? ((int) pacman->y - 4) : (map->height - 4));
+        }
+        if (pacman->dir == DIR_DOWN) {
+            if (map->cells[(int) pacman->x][((int) pacman->y == map->height - 1) ? (0) : ((int) pacman->y + 1)] == CELL_BLOCK) {
+                return BFS(map, (int) ghost->x, (int) ghost->y, (int) pacman->x, (int) pacman->y);
+            }
+            else if (map->cells[(int) pacman->x][((int) pacman->y + 2 <= map->height - 1) ? ((int) pacman->y + 2) : ((int)pacman->y + 2 - (map->height - 1))] == CELL_BLOCK) {
+                return BFS(map, (int) ghost->x, (int) ghost->y, (int) pacman->x, ((int) pacman->y + 1 <= map->height - 1) ? ((int) pacman->y + 1) : ((int) pacman->y + 1 - (map->height - 1)));
+            }
+            else if (map->cells[(int) pacman->x][((int) pacman->y + 3 <= map->height - 1) ? ((int) pacman->y + 3) : ((int)pacman->y + 3 - (map->height - 1))] == CELL_BLOCK) {
+                return BFS(map, (int) ghost->x, (int) ghost->y, (int) pacman->x, ((int) pacman->y + 2 <= map->height - 1) ? ((int) pacman->y + 2) : ((int) pacman->y + 2 - (map->height - 1)));
+            }
+            else if (map->cells[(int) pacman->x][((int) pacman->y + 4 <= map->height - 1) ? ((int) pacman->y + 4) : ((int)pacman->y + 4 - (map->height - 1))] == CELL_BLOCK) {
+                return BFS(map, (int) ghost->x, (int) ghost->y, (int) pacman->x, ((int) pacman->y + 3 <= map->height - 1) ? ((int) pacman->y + 3) : ((int) pacman->y + 3 - (map->height - 1)));
+            }
+            else
+                return BFS(map, (int) ghost->x, (int) ghost->y, (int) pacman->x, ((int) pacman->y + 4 <= map->height - 1) ? ((int) pacman->y + 4) : ((int) pacman->y + 4 - (map->height - 1)));
+        }
+        if (pacman->dir == DIR_LEFT) {
+            if (map->cells[((int) pacman->x == 0) ? (map->width - 1) : ((int) pacman->x - 1)][(int) pacman->y] == CELL_BLOCK) {
+                return BFS(map, (int) ghost->x, (int) ghost->y, (int) pacman->x, (int) pacman->y);
+            }
+            else if (map->cells[((int) pacman->x - 2 >= 0) ? ((int) pacman->x - 2) : (map->width - (2 - (int) pacman->x))][(int) pacman->y] == CELL_BLOCK) {
+                return BFS(map, (int) ghost->x, (int) ghost->y, ((int) pacman->x - 1 >= 0) ? ((int) pacman->x - 1) : (map->width - 1), (int) pacman->y);
+            }
+            else if (map->cells[((int) pacman->x - 3 >= 0) ? ((int) pacman->x - 3) : (map->width - (2 - (int) pacman->x))][(int) pacman->y] == CELL_BLOCK) {
+                return BFS(map, (int) ghost->x, (int) ghost->y, ((int) pacman->x - 2 >= 0) ? ((int) pacman->x - 2) : (map->width - 2), (int) pacman->y);
+            }
+            else if (map->cells[((int) pacman->x - 4 >= 0) ? ((int) pacman->x - 4) : (map->width - (3 - (int) pacman->x))][(int) pacman->x] == CELL_BLOCK) {
+                return BFS(map, (int) ghost->x, (int) ghost->y, ((int) pacman->x - 3 >= 0) ? ((int) pacman->x - 3) : (map->width - 3), (int) pacman->y);
+            }
+            else
+                return BFS(map, (int) ghost->x, (int) ghost->y, ((int) pacman->x - 4 >= 0) ? ((int) pacman->x - 4) : (map->width - 4), (int) pacman->y);
+        }
+        if (pacman->dir == DIR_RIGHT || pacman->dir == DIR_NONE) {
+            if (map->cells[((int) pacman->x == map->width - 1) ? (0) : ((int) pacman->x + 1)][(int) pacman->y] == CELL_BLOCK) {
+                return BFS(map, (int) ghost->x, (int) ghost->y, (int) pacman->x, (int) pacman->y);
+            }
+            else if (map->cells[((int) pacman->x + 2 <= map->width - 1) ? ((int) pacman->x + 2) : ((int)pacman->x + 2 - (map->width - 1))][(int) pacman->y] == CELL_BLOCK) {
+                return BFS(map, (int) ghost->x, (int) ghost->y, ((int) pacman->x + 1 <= map->width - 1) ? ((int) pacman->x + 1) : ((int) pacman->x + 1 - (map->width - 1)), (int) pacman->y);
+            }
+            else if (map->cells[((int) pacman->x + 3 <= map->width - 1) ? ((int) pacman->x + 3) : ((int)pacman->x + 3 - (map->width - 1))][(int) pacman->y] == CELL_BLOCK) {
+                return BFS(map, (int) ghost->x, (int) ghost->y, ((int) pacman->x + 2 <= map->width - 1) ? ((int) pacman->x + 2) : ((int) pacman->x + 2 - (map->width - 1)), (int) pacman->y);
+            }
+            else if (map->cells[((int) pacman->x + 4 <= map->width - 1) ? ((int) pacman->x + 4) : ((int)pacman->x + 4 - (map->width - 1))][(int) pacman->y] == CELL_BLOCK) {
+                return BFS(map, (int) ghost->x, (int) ghost->y, ((int) pacman->x + 3 <= map->width - 1) ? ((int) pacman->x + 3) : ((int) pacman->x + 3 - (map->width - 1)), (int) pacman->y);
+            }
+            else
+                return BFS(map, (int) ghost->x, (int) ghost->y, ((int) pacman->x + 4 <= map->width - 1) ? ((int) pacman->x + 4) : ((int) pacman->x + 4 - (map->width - 1)), (int) pacman->y);
+        }
     }
 
 }
