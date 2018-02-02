@@ -28,6 +28,10 @@ void initiateGame(char* filename, Map* outMap, Game* outGame, Pacman* outPacman,
                 outGame->cherries += 1;
         }
     }
+
+    LOG(outMap->width);
+    LOG(outMap->height);
+
     outGame->ghosts = MAX_GHOST_COUNT;
     fscanf(map, "%d%*s %d %d (%d,%d) (%lf,%lf)", &outGame->score, &outPacman->dir, &outPacman->health, &outPacman->startX, &outPacman->startY, &outPacman->x, &outPacman->y);
     for (i = 0; i < MAX_GHOST_COUNT; i++) {
@@ -82,8 +86,8 @@ void checkEatables(Map* map, Game* outGame, Pacman* outPacman, Ghost* outGhosts)
             }
         }
         if (map->cells[(int) outPacman->x][(int) outPacman->y] == CELL_CHEESE &&
-            ((fabs(outPacman->x - (double) ((int) outPacman->x)) < 0.5)) &&
-            (fabs(outPacman->y - (double) ((int) outPacman->y)) < 0.5)) {
+            ((fabs(outPacman->x - (double) ((int) outPacman->x)) < 1)) &&
+            (fabs(outPacman->y - (double) ((int) outPacman->y)) < 1)) {
             outGame->score += CHEESE_SCORE;
             outGame->cheeses -= 1;
             map->cells[(int) outPacman->x][(int) outPacman->y] = CELL_EMPTY;

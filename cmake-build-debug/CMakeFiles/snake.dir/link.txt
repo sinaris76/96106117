@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/snake.dir/main.c.o CMakeFiles/snake.dir/src/physics.c.o CMakeFiles/snake.dir/src/game.c.o  -o snake -lm -lSDL2 -lSDL2_gfx 

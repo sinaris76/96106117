@@ -1,22 +1,12 @@
-cmake_minimum_required(VERSION 3.6)
-project(project)
+cmake_minimum_required(VERSION 3.9)
+project(project C)
 
 set(CMAKE_C_STANDARD 99)
-set(SDL2_GFX_LibDir "../sdl/sdl2-gfx-lib")
-set(SDL2_Flags "-mwindows -Wl,--no-undefined -static -libgcc")
-set(SDL2_LibDir "../sdl/sdl2-lib")
-add_library(SDL2 STATIC IMPORTED)
-add_library(SDL2main STATIC IMPORTED)
-add_library(SDL2_GFX STATIC IMPORTED)
-set_property(TARGET SDL2 PROPERTY IMPORTED_LOCATION "${SDL2_LibDir}/libSDL2.a")
-set_property(TARGET SDL2main PROPERTY IMPORTED_LOCATION "${SDL2_LibDir}/libSDL2main.a")
-set_property(TARGET SDL2_GFX PROPERTY IMPORTED_LOCATION "${SDL2_GFX_LibDir}/libsdl-gfx.a")
-set(SDL2_Libs SDL2 SDL2main SDL2_GFX m dinput8 dxguid dxerr8 user32 gdi32 winmm imm32 ole32 oleaut32 shell32 version uuid)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 ${SDL2_Flags}")
-set(SOURCE src/game.c src/physics.c)
-add_executable(project ${SOURCE})
-include_directories(src)
-add_library(lib STATIC IMPORTED)
-set_target_properties(lib PROPERTIES IMPORTED_LOCATION "../liblib.a")
-target_link_libraries(project lib)
-target_link_libraries(project ${SDL2_Libs})
+
+add_executable(pacman main.c src/physics.c src/game.c)
+
+INCLUDE_DIRECTORIES(/usr/include/SDL2)
+
+ADD_DEFINITIONS(-D_REENTRANT)
+
+TARGET_LINK_LIBRARIES(pacman m SDL2 SDL2_gfx)
